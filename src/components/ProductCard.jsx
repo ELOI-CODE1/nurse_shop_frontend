@@ -1,0 +1,20 @@
+import { Plus } from 'lucide-react'
+import { AppLink } from './AppLink'
+import { image } from '../utils/assets'
+import { money } from '../utils/format'
+
+export function ProductCard({ product, navigate, addToBag }) {
+  const { id, name, category, price, detail } = product
+
+  return <article className="product">
+    <AppLink to={`/products/${id}`} navigate={navigate} className="product-photo" aria-label={`View ${name}`}><img src={image(id)} alt={name} loading="lazy" /></AppLink>
+    <div className="product-body">
+      <p className="product-category">{category}</p>
+      <h3><AppLink to={`/products/${id}`} navigate={navigate}>{name}</AppLink></h3>
+      <p className="detail">{detail}</p>
+      <div className="product-bottom"><strong>{money(price)}</strong>
+        <button type="button" aria-label={`Add ${name} to bag`} title="Add to bag" onClick={() => addToBag(product, 1)}><Plus size={19} /></button>
+      </div>
+    </div>
+  </article>
+}
