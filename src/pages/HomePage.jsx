@@ -7,6 +7,7 @@ import { products } from '../data/products'
 import { image } from '../utils/assets'
 
 export function HomePage({ navigate, addToBag }) {
+  const featuredProducts = ['scrubs', 'clogs', 'tote', 'tumbler'].map((id) => products.find((product) => product.id === id))
   return <main>
     <section className="hero shell">
       <div className="hero-copy">
@@ -20,7 +21,7 @@ export function HomePage({ navigate, addToBag }) {
     <ServiceStrip />
     <section className="shell home-products">
       <div className="home-products-heading"><div><p className="eyebrow">The collection</p><h2>Shift essentials</h2></div><AppLink to="/shop" navigate={navigate}>View all products <ArrowRight size={17} /></AppLink></div>
-      <div className="grid grid-cols-2 gap-x-3 gap-y-7 sm:gap-x-5 lg:grid-cols-4">{products.slice(0, 4).map((product) => <ProductCard key={product.id} product={product} navigate={navigate} addToBag={addToBag} />)}</div>
+      <div className="grid grid-cols-2 gap-x-3 gap-y-7 sm:gap-x-5 lg:grid-cols-4">{featuredProducts.map((product) => <ProductCard key={product.id} product={product} navigate={navigate} addToBag={addToBag} />)}</div>
     </section>
     <ContactSection />
   </main>

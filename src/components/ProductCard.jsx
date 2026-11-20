@@ -5,9 +5,10 @@ import { money } from '../utils/format'
 
 export function ProductCard({ product, navigate, addToBag }) {
   const { id, name, category, price, detail } = product
+  const portraitImage = id.endsWith('-scrub-set') || id === 'gray-scrub-set-with-tumbler'
 
   return <article className="product">
-    <AppLink to={`/products/${id}`} navigate={navigate} className="product-photo" aria-label={`View ${name}`}><img src={image(id)} alt={name} loading="lazy" /></AppLink>
+    <AppLink to={`/products/${id}`} navigate={navigate} className={`product-photo${portraitImage ? ' product-photo--portrait' : ''}`} aria-label={`View ${name}`}><img src={image(id)} alt={name} loading="lazy" /></AppLink>
     <div className="product-body">
       <p className="product-category">{category}</p>
       <h3><AppLink to={`/products/${id}`} navigate={navigate}>{name}</AppLink></h3>
