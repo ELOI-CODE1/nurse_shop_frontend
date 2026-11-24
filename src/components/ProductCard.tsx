@@ -21,7 +21,7 @@ export function ProductCard({ product, navigate, addToBag }: ProductCardProps) {
         className={`product-photo${portraitImage ? ' product-photo--portrait' : ''}`}
         aria-label={`View ${name}`}
       >
-        <img src={image(id)} alt={name} loading="lazy" />
+        <img src={image(id)} alt={name} loading="lazy" decoding="async" />
       </AppLink>
       <div className="product-body">
         <p className="product-category">{category}</p>

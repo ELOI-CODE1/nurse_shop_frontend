@@ -31,7 +31,7 @@ export function ProductPage({ product, navigate, addToBag }: ProductPageProps) {
       </AppLink>
       <div className="product-layout">
         <div className={`detail-photo${portraitImage ? ' detail-photo--portrait' : ''}`}>
-          <img src={image(product.id)} alt={product.name} />
+          <img src={image(product.id)} alt={product.name} loading="lazy" decoding="async" />
         </div>
         <div className="product-info">
           <p className="eyebrow">{product.category}</p>

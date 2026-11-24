@@ -42,7 +42,13 @@ h2 { font-size:clamp(2.15rem,5vw,3.8rem); line-height:1.04; margin-top:7px; }
 .product h3 a:hover { text-decoration:underline; }
 .product-photo img { width:100%; height:100%; object-fit:cover; }
 .product-photo--portrait img { object-fit:contain; object-position:top center; }
-.product-body { @apply flex flex-1 flex-col p-3 sm:p-4; }
+/* Image performance: decode off-screen images asynchronously, avoid layout shift */
+.product-photo img,
+.detail-photo img,
+.drawer-items img {
+  content-visibility: auto;
+  contain-intrinsic-size: 200px 200px;
+}.product-body { @apply flex flex-1 flex-col p-3 sm:p-4; }
 .product-category { @apply text-[10px] font-bold uppercase tracking-widest; color:var(--green); }
 .product h3 { @apply my-1 font-bold; }
 .detail { @apply text-sm; color:var(--soft); }

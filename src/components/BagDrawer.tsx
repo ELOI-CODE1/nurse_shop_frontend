@@ -40,7 +40,7 @@ export function BagDrawer({ drawer, navigate, selected, bag, subtotal, orderUrl,
             <ul className="drawer-items">
               {selected.map(({ id, name, price }) => (
                 <li key={id}>
-                  <img src={image(id)} alt="" />
+                  <img src={image(id)} alt="" loading="lazy" decoding="async" />
                   <div className="min-w-0 flex-1">
                     <strong>{name}</strong>
                     <p>{money(price)} each</p>
