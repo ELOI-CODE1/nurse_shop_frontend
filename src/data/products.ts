@@ -41,7 +41,6 @@ const productData: ProductRow[] = [
   ['nurse-tumbler-pink', 'Nurse Tumbler Pink', 'Accessories', 15, 'Pink insulated nurse tumbler with lid.', false],
   ['nurse-tumbler-blue', 'Nurse Tumbler Blue', 'Accessories', 15, 'Blue insulated nurse tumbler with lid.', false],
   ['nurse-clogs-white', 'Nurse Clogs White Medical', 'Footwear', 15, 'White printed clinical clogs for healthcare professionals.', true],
-  ['nurse-clogs-grey', 'Nurse Clogs Grey Medical', 'Footwear', 15, 'Grey printed clinical clogs, comfortable for long shifts.', true],
 ]
 
 export const products: Product[] = productData.map(
